@@ -21,7 +21,7 @@ const Navbar = () => {
   const router = useRouter();
   const isDesktop = useBreakpointValue({ base: false, lg: true })
   return (
-    <Box as="nav" mb={10} py='20px' backdropBlur='blur(10px)' bg='black'>
+    <Box as="nav" mb={10} py='20px' backdropFilter='blur(30px)' position='fixed' w='full' zIndex={1000}>
       <ContainLayout>
         <Flex justify="space-between" align={'center'}>
           <Box>
