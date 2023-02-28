@@ -16,7 +16,7 @@ export default function Hero() {
                     </Tag>
                     <Heading fontSize={['38px', '48px']} fontWeight='700'>The Most Powerful Social-Fi Platform</Heading>
                     <Text maxW='350px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</Text>
-                    <Button type='submit' variant='solid' px={8} py={7} bg='brand.300' rounded='10px' w='fit-content'>Join waitlist</Button>
+                    <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} w='fit-content'>Join waitlist</Button>
                 </VStack>
                 <Box>
                     <Image src={Bg} alt=''  width={300}/>
