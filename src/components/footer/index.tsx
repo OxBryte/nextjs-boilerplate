@@ -9,22 +9,22 @@ import Image from 'next/image';
 const Footer = () => {
     return (
         <ContainLayout>
-            <Flex align="center" justify='center' py={{ base: '10px', md: '50px' }}>
-                <Stack spacing='60px' width='100%' direction={['column', 'row']} align='end' justifyContent='space-between'>
+            <Flex align="center" justify='center' py='50px'  color='white'>
+                <Stack spacing='60px' width='100%' direction='row' align='flex-end' justifyContent='space-between'>
                     <VStack align='left' gap='10px'>
-                        <Text fontSize={{ base: '12px', sm: '14px', }} color='white' fontWeight='500' >The most powerful <br /> social-fi platform.</Text>
+                        <Text fontSize='14px' fontWeight='500' >The most powerful <br /> social-fi platform.</Text>
                         <HStack spacing='20px'>
-                            <Box color='white'>
+                            <Box>
                                 <Box as='a' href='https://discord.gg/rethinkable' target='_blank'><FaDiscord size={20} cursor='pointer' /></Box>
                             </Box>
-                            <Box color='white'>
+                            <Box>
                                 <Box as='a' href='https://twitter.com/rethinkablexyz' target='_blank'><FaTwitter size={20} cursor='pointer' /></Box>
                             </Box>
                         </HStack>
                     </VStack>
                     <VStack>
-                        <Button alignSelf='end'>Login</Button>
-                        <HStack spacing={5} color='white'>
+                        <Button alignSelf='end' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }}>Join waitlist</Button>
+                        <HStack spacing={3} fontSize='14px'>
                             <Text>Terms of service</Text>
                             <Text>Privacy Policy</Text>
                         </HStack>
