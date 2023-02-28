@@ -21,11 +21,11 @@ const PageLayout = ({ title, description, children, footer = true }: PageProps) 
       />
         <Box
           mx="auto"
-          py={{ base: '4', md: '6', lg: '8' }}
+          // py={{ base: '4', md: '6', lg: '8' }}
         >
-          <ContainLayout>
+          {/* <ContainLayout> */}
             <Navbar />
-          </ContainLayout>
+          {/* </ContainLayout> */}
           {children}
           {footer && <Footer/>}
         </Box>

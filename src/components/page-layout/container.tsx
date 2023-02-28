@@ -5,7 +5,7 @@ const ContainLayout = ({ children, ...props }) => {
         <Box
             mx="auto"
             maxW="8xl"
-            px={{ base: '4', md: '8', lg: '12' }}
+            // px={{ base: '4', md: '8', lg: '12' }}
             {...props}
           >
             {children}
