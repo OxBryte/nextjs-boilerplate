@@ -1,7 +1,7 @@
 import { Stack, Tag, VStack, TagLabel, Heading, Text, Box, Button } from '@chakra-ui/react'
 import React from 'react'
 import ContainLayout from '../page-layout/container'
-import Bg from '../assets/frame.png'
+import Bg from '../assets/Frame.png'
 import Image from 'next/image'
 
 export default function About() {
