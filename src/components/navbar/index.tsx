@@ -1,3 +1,4 @@
+'use-client'
 import {
   Box,
   Button,
@@ -16,8 +17,53 @@ import Logo from '../../components/assets/temp.png'
 import { useRouter } from "next/router";
 import Image from 'next/image';
 import ContainLayout from '../page-layout/container';
+import UAuth from '@uauth/js';
+import { FaCaretDown } from 'react-icons/fa'
+
 
 const Navbar = () => {
+
+  const [open, setOpen] = React.useState(false)
+  console.log(setOpen)
+
+  // Connect wallet function
+
+  const [connectedAddress, setConnectedAddress] = React.useState('');
+
+  // UAth login function is set here
+
+  const uauth = new UAuth({
+    clientID: "f196fade-1a56-49d3-9bf0-74a50e34674d",
+    redirectUri: "http://localhost:3000",
+    // redirectUri: "https://www.dynastypad.com/",
+    scope: "openid wallet",
+  });
+
+  // Logout
+  const logout = async () => {
+    await uauth.logout();
+
+    console.log("Logged out with Unstoppable");
+
+    setConnectedAddress("");
+  };
+
+  // Sign in Modal
+  const login = async () => {
+    try {
+      const authorization = await uauth.loginWithPopup();
+      const domainName = authorization.idToken.sub;
+      // const walletAddress = authorization.idToken.wallet_address;
+
+      console.log("Logged in with Unstoppable");
+
+      setConnectedAddress(domainName);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
   const router = useRouter();
   const isDesktop = useBreakpointValue({ base: false, lg: true })
   return (
@@ -27,8 +73,19 @@ const Navbar = () => {
           <Box>
             <Image src={Logo} alt='Logo' width={20} />
           </Box>
-          <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{color: 'white', bg:'brand.400'}}>Login</Button>
+          {connectedAddress ? (
+            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={() => setOpen(true)}>{connectedAddress.length > 0 &&
+              `${connectedAddress.substring(
+                0,
+                7
+              )}...`} <FaCaretDown /> </Button>
+          ) : (
+            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={login}>Login</Button>
+          )}
         </Flex>
+        {open && (
+          <Button color='black' right='5.7%' fontSize='14px' mt='10px' py='10px' px='13px' bg='white' rounded='10px' w='fit-content' position='absolute' onClick={logout} >Disconnect</Button>
+        )}
       </ContainLayout>
     </Box>
   )
