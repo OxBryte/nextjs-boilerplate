@@ -74,18 +74,15 @@ const Navbar = () => {
             <Image src={Logo} alt='Logo' width={20} />
           </Box>
           {connectedAddress ? (
-            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={() => setOpen(true)}>{connectedAddress.length > 0 &&
+            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={logout}>{connectedAddress.length > 0 &&
               `${connectedAddress.substring(
                 0,
                 7
-              )}...`} <FaCaretDown /> </Button>
+              )}...`} </Button>
           ) : (
             <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={login}>Login</Button>
           )}
         </Flex>
-        {open && (
-          <Button color='black' right='5.7%' fontSize='14px' mt='10px' py='10px' px='13px' bg='white' rounded='10px' w='fit-content' position='absolute' onClick={logout} >Disconnect</Button>
-        )}
       </ContainLayout>
     </Box>
   )
