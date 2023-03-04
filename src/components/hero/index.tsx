@@ -15,7 +15,7 @@ export default function Hero() {
                         </TagLabel>
                     </Tag>
                     <Heading fontSize={['38px', '48px']} fontWeight='700'>The Most Powerful Social-Fi Platform</Heading>
-                    <Text maxW='350px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun.</Text>
+                    <Text maxW='350px'>Pwrfl is the #1 decentralized social platform for chatting, playing games with friends, and earning rewards.</Text>
                     <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} w='fit-content'>Join waitlist</Button>
                 </VStack>
                 <Box>

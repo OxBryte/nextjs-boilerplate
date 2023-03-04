@@ -74,13 +74,13 @@ const Navbar = () => {
             <Image src={Logo} alt='Logo' width={20} />
           </Box>
           {connectedAddress ? (
-            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={logout}>{connectedAddress.length > 0 &&
+            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' fontSize='12px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={logout}>{connectedAddress.length > 0 &&
               `${connectedAddress.substring(
                 0,
                 7
               )}...`} </Button>
           ) : (
-            <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={login}>Login</Button>
+            <Button fontSize='12px' type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }}>Connect wallet</Button>
           )}
         </Flex>
       </ContainLayout>

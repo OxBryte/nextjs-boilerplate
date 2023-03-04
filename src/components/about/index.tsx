@@ -17,8 +17,8 @@ export default function About() {
                             About us
                         </TagLabel>
                     </Tag>
-                    <Heading fontSize={['38px', '48px']} fontWeight='700' maxW='400px'>Attract new clients through engaging video</Heading>
-                    <Text maxW='350px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit ame</Text>
+                    <Heading fontSize={['28px', '38px']} fontWeight='700' maxW='400px'>Join our community today and experience the future of social gaming!</Heading>
+                    <Text maxW='350px'>At Pwrfl, we believe that connecting with friends and playing games should be easy, fun, and rewarding. Thats why we have created a decentralized social platform that lets you chat, play games, and earn rewards, all in one place. Powered by the latest Web3 technologies, our platform ensures that your data is owned by you and can be accessed anytime, anywhere.</Text>
                 </VStack>
             </Stack>
         </ContainLayout>
