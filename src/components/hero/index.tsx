@@ -1,7 +1,7 @@
 import { Stack, Tag, VStack, TagLabel, Heading, Text, Box, Button } from '@chakra-ui/react'
 import React from 'react'
 import ContainLayout from '../page-layout/container'
-import Bg from '../assets/certifiedbg.png'
+import Bg from '../assets/frame1.svg'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
                     <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} w='fit-content'>Join waitlist</Button>
                 </VStack>
                 <Box>
-                    <Image src={Bg} alt=''  width={300}/>
+                    <Image src={Bg} alt=''  width={350}/>
                 </Box>
             </Stack>
         </ContainLayout>

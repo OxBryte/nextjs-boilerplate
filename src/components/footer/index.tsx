@@ -4,6 +4,7 @@ import { MdEmail } from 'react-icons/md'
 import { FaDiscord, FaTwitter, FaMedium } from 'react-icons/fa';
 // import { LogoIcon } from '../icons/Logo';
 import ContainLayout from '../page-layout/container';
+import Logo from '../../components/assets/pwfl.png'
 import Image from 'next/image';
 
 const Footer = () => {
@@ -12,6 +13,7 @@ const Footer = () => {
             <Flex align="center" justify='center' py='50px'  color='white'>
                 <Stack spacing='60px' width='100%' direction='row' align='flex-end' justifyContent='space-between'>
                     <VStack align='left' gap='10px'>
+                        <Image src={Logo} alt='' width={60} />
                         <Text fontSize='14px' fontWeight='500' >The most powerful <br /> social-fi platform.</Text>
                         <HStack spacing='20px'>
                             <Box>

@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import * as React from 'react'
 import Link from 'next/link'
-import Logo from '../../components/assets/temp.png'
+import Logo from '../../components/assets/pwfl.png'
 import { useRouter } from "next/router";
 import Image from 'next/image';
 import ContainLayout from '../page-layout/container';
@@ -71,7 +71,7 @@ const Navbar = () => {
       <ContainLayout>
         <Flex justify="space-between" align={'center'}>
           <Box>
-            <Image src={Logo} alt='Logo' width={20} />
+            <Image src={Logo} alt='Logo' width={60} />
           </Box>
           {connectedAddress ? (
             <Button type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' fontSize='12px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={logout}>{connectedAddress.length > 0 &&
