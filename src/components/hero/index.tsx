@@ -11,7 +11,7 @@ export default function Hero() {
                 <VStack align='left' gap='10px' maxW='550px'>
                     <Tag colorScheme='cyan' borderRadius='full' size='md' w='fit-content'>
                         <TagLabel>
-                            Currently on building stage
+                            Launching soon
                         </TagLabel>
                     </Tag>
                     <Heading fontSize={['38px', '48px']} fontWeight='700'>The Most Powerful Social-Fi Platform</Heading>

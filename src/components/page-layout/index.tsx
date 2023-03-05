@@ -16,7 +16,7 @@ const PageLayout = ({ title, description, children, footer = true }: PageProps) 
   return (
     <>
       <NextSeo
-        title={title + ' | Boilerplate'}
+        title={title + ' | Powerfule'}
         description={description}
       />
         <Box

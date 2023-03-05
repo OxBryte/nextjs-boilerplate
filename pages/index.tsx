@@ -8,7 +8,7 @@ import About from '../src/components/about';
 
 export default function Home() {
   return (
-    <PageLayout title='Home' description='My Boilerplate'>
+    <PageLayout title='Home' description='Powerful'>
       <Hero />
       <Service />
       <About />
