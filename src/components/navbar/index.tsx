@@ -80,7 +80,7 @@ const Navbar = () => {
                 7
               )}...`} </Button>
           ) : (
-            <Button fontSize='12px' type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }}>Connect wallet</Button>
+            <Button fontSize='12px' type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={login} >Connect wallet</Button>
           )}
         </Flex>
       </ContainLayout>
