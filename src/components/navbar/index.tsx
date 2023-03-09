@@ -33,9 +33,8 @@ const Navbar = () => {
   // UAth login function is set here
 
   const uauth = new UAuth({
-    clientID: "f196fade-1a56-49d3-9bf0-74a50e34674d",
-    redirectUri: "http://localhost:3000",
-    // redirectUri: "https://www.dynastypad.com/",
+    clientID: "3b4bfa90-d07e-4e3a-9122-2ce4b8853d7a",
+    redirectUri: "https://www.pwrfl.xyz/",
     scope: "openid wallet",
   });
 
