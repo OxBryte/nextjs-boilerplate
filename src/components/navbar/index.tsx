@@ -21,47 +21,62 @@ import UAuth from '@uauth/js';
 import { FaCaretDown } from 'react-icons/fa'
 
 
+
 const Navbar = () => {
 
-  const [open, setOpen] = React.useState(false)
-  console.log(setOpen)
+  React.useEffect(() => {
+    if (uauth != undefined && connectedAddress != undefined) {
+      try {
+        uauth.user()
+        .then((user) => {
+          setConnectedAddress(user.sub)
+        })
+        .catch((e) => {
+          console.log(e);
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  })
 
   // Connect wallet function
 
-  const [connectedAddress, setConnectedAddress] = React.useState('');
+  const [connectedAddress, setConnectedAddress] = React.useState('')
 
   // UAth login function is set here
 
   const uauth = new UAuth({
     clientID: "3b4bfa90-d07e-4e3a-9122-2ce4b8853d7a",
+    // redirectUri: "http://localhost:3000",
     redirectUri: "https://www.pwrfl.xyz/",
     scope: "openid wallet",
   });
-
-  // Logout
-  const logout = async () => {
-    await uauth.logout();
-
-    console.log("Logged out with Unstoppable");
-
-    setConnectedAddress("");
-  };
-
+  
   // Sign in Modal
   const login = async () => {
     try {
       const authorization = await uauth.loginWithPopup();
       const domainName = authorization.idToken.sub;
       // const walletAddress = authorization.idToken.wallet_address;
-
+      
       console.log("Logged in with Unstoppable");
-
+      
       setConnectedAddress(domainName);
     } catch (error) {
       console.error(error);
     }
   };
-
+  
+    // Logout
+    const logout = async () => {
+      await uauth.logout();
+  
+      console.log("Logged out with Unstoppable");
+  
+      setConnectedAddress("");
+    };
+  
 
   const router = useRouter();
   const isDesktop = useBreakpointValue({ base: false, lg: true })
@@ -77,7 +92,7 @@ const Navbar = () => {
               `${connectedAddress.substring(
                 0,
                 7
-              )}...`} </Button>
+              )}...${connectedAddress.substring(12)}`} </Button>
           ) : (
             <Button fontSize='12px' type='submit' variant='solid' px={7} py={5} bg='brand.300' rounded='10px' _hover={{ color: 'white', bg: 'brand.400' }} onClick={login} >Connect wallet</Button>
           )}
